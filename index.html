@@ -1,0 +1,579 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090713">
+<title>Happy Birthday Kishan ✨</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Great+Vibes&display=swap');
+
+:root {
+  --gold: #ffdc91;
+  --purple: #a78bfa;
+  --bg: #090713;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse at 15% 20%, #62249a66, transparent 45%),
+    radial-gradient(ellipse at 85% 75%, #ad6c2c35, transparent 40%),
+    linear-gradient(140deg, #090713, #171027, #090713);
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  color: #fff2cb;
+  animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: .15; transform: scale(.7); }
+  to { opacity: 1; transform: scale(1.3); }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 6%;
+  background: #090713bb;
+  border-bottom: 1px solid #ffffff15;
+  backdrop-filter: blur(15px);
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--gold);
+}
+
+#counter {
+  color: #c8bce0;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.page {
+  display: none;
+  min-height: 100svh;
+  padding: 105px 20px 90px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.page.active {
+  display: flex;
+  animation: enter .65s ease;
+}
+
+@keyframes enter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: clamp(42px, 10vw, 86px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+h2 {
+  font-size: clamp(27px, 6vw, 42px);
+  margin-bottom: 18px;
+}
+
+.gold { color: var(--gold); }
+
+.script {
+  display: block;
+  color: var(--gold);
+  font: clamp(66px, 14vw, 112px) 'Great Vibes', cursive;
+  margin: 15px 0;
+  text-shadow: 0 0 35px #ffdc9155;
+}
+
+.cake {
+  font-size: 78px;
+  margin-bottom: 25px;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 25px #ffdc9140);
+}
+
+@keyframes float {
+  50% { transform: translateY(-12px) rotate(3deg); }
+}
+
+.subtitle {
+  color: #c8bfd8;
+  max-width: 490px;
+  line-height: 1.9;
+  font-size: 15px;
+  margin: 16px auto 28px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 50px;
+  padding: 15px 25px;
+  background: linear-gradient(110deg, #ffe8b2, #c99b4d);
+  color: #171020;
+  font: 800 13px 'Outfit', sans-serif;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px #ffdc9144;
+}
+
+.secondary {
+  color: white;
+  background: #ffffff0c;
+  border: 1px solid #ffffff25;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.glass {
+  width: min(100%, 530px);
+  padding: 30px 24px;
+  border: 1px solid #ffffff20;
+  border-radius: 25px;
+  background: #ffffff08;
+  box-shadow: 0 25px 80px #0005;
+  backdrop-filter: blur(12px);
+}
+
+.message {
+  color: #e5dcef;
+  text-align: left;
+  line-height: 2;
+  font-size: 15px;
+  white-space: pre-line;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: min(100%, 660px);
+  margin-top: 20px;
+}
+
+.tile {
+  min-height: 125px;
+  padding: 15px 5px;
+  color: white;
+  font-family: inherit;
+  background: #ffffff09;
+  border: 1px solid #ffffff20;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.tile:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  background: #ffdc9110;
+}
+
+.tile span {
+  display: block;
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.tile small {
+  font-size: 11px;
+  color: #d0c4df;
+}
+
+#giftResult {
+  display: none;
+  margin-top: 20px;
+}
+
+#giftResult.show {
+  display: block;
+  animation: enter .5s ease;
+}
+
+.photo-box {
+  width: min(100%, 340px);
+  min-height: 220px;
+  border: 1px dashed #ffdc9188;
+  border-radius: 20px;
+  margin: 18px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #ffffff08;
+  color: #c8bfd8;
+}
+
+.photo-box img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+}
+
+input[type=file] {
+  max-width: 100%;
+  color: #ddd;
+  margin: 12px 0;
+}
+
+#musicControl {
+  position: fixed;
+  right: 15px;
+  bottom: 24px;
+  z-index: 50;
+  border-radius: 50px;
+  border: 1px solid #ffdc9188;
+  background: #171027ed;
+  color: var(--gold);
+  padding: 12px 16px;
+  font: 600 12px 'Outfit', sans-serif;
+  cursor: pointer;
+}
+
+#progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  z-index: 30;
+  background: linear-gradient(90deg, var(--purple), var(--gold));
+  transition: width .4s;
+}
+
+.confetti {
+  position: fixed;
+  top: -30px;
+  z-index: 40;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+footer {
+  margin-top: 30px;
+  color: #9689a9;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+@media(max-width: 480px) {
+  .grid { gap: 7px; }
+  .tile { min-height: 110px; }
+  .tile span { font-size: 28px; }
+  .tile small { font-size: 9px; }
+  .glass { padding: 24px 18px; }
+}
+</style>
+</head>
+
+<body>
+<div id="stars"></div>
+
+<header>
+  <div class="logo">K / SPECIAL</div>
+  <div id="counter">01 / 06</div>
+</header>
+
+<!-- MUSIC -->
+<audio id="song" loop preload="none">
+  <source src="birthday-song.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicControl" onclick="toggleMusic()">🎵 PLAY MUSIC</button>
+
+<!-- PAGE 1 -->
+<section class="page active">
+  <div class="eyebrow">A special surprise awaits</div>
+  <div class="cake">🎂</div>
+  <h1>THIS DAY IS<br><span class="gold">ALL YOURS.</span></h1>
+  <p class="subtitle">
+    One special person. One unforgettable day.
+    A little surprise made just for you.
+  </p>
+  <button class="btn" onclick="nextPage()">OPEN YOUR SURPRISE ✦ →</button>
+  <footer>MADE WITH LOVE • JUST FOR KISHAN</footer>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <div class="eyebrow">The main character</div>
+  <h1>HAPPY BIRTHDAY</h1>
+  <span class="script">Kishan ✨</span>
+  <p class="subtitle">
+    Today the world celebrates someone amazing.
+    May your next chapter be full of happiness,
+    success, laughter and incredible memories.
+  </p>
+  <button class="btn" onclick="burst();nextPage()">LET'S CELEBRATE 🎉 →</button>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <div class="eyebrow">A message from the heart</div>
+  <div class="glass">
+    <div style="font-size:42px;margin-bottom:15px">💌</div>
+    <h2>Dear <span class="gold">Kishan</span>,</h2>
+    <p class="message">Happy Birthday, bhai! ❤️
+
+May your life always be filled with happiness, genuine people, unforgettable memories and countless reasons to smile.
+
+May you achieve the dreams you've been working for, overcome every challenge and keep becoming the best version of yourself.
+
+I hope this new year brings you peace, success, laughter and amazing surprises.
+
+Keep smiling, keep shining and never stop being YOU.
+
+<b>Here's to your most legendary year yet! 🥳</b></p>
+  </div>
+  <button class="btn" onclick="nextPage()" style="margin-top:25px">THERE'S MORE →</button>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+  <div class="eyebrow">Choose your surprise</div>
+  <h2>Pick a <span class="gold">Mystery Box</span></h2>
+  <p class="subtitle">Three little surprises for the birthday legend.</p>
+
+  <div class="grid">
+    <button class="tile" onclick="gift(0)">
+      <span>🎁</span><small>THE GIFT</small>
+    </button>
+    <button class="tile" onclick="gift(1)">
+      <span>💎</span><small>THE WISH</small>
+    </button>
+    <button class="tile" onclick="gift(2)">
+      <span>👑</span><small>THE TITLE</small>
+    </button>
+  </div>
+
+  <div class="glass" id="giftResult"></div>
+  <button class="btn" onclick="nextPage()" style="margin-top:25px">NEXT SURPRISE →</button>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page">
+  <div class="eyebrow">Memories last forever</div>
+  <h2>Our <span class="gold">Memory Wall</span> 📸</h2>
+  <p class="subtitle">
+    Add your favourite photo with Kishan and make
+    this birthday experience more personal.
+  </p>
+
+  <div class="photo-box" id="photoBox">
+    <div>
+      <div style="font-size:48px">📷</div>
+      <p>Your favourite memory goes here</p>
+    </div>
+  </div>
+
+  <input type="file" id="photoInput" accept="image/*">
+
+  <button class="btn" onclick="nextPage()" style="margin-top:20px">THE FINAL SURPRISE ✦ →</button>
+</section>
+
+<!-- PAGE 6 -->
+<section class="page">
+  <div class="cake">🎉</div>
+  <div class="eyebrow">One final birthday wish</div>
+  <h1>KEEP<br><span class="gold">SHINING.</span></h1>
+  <span class="script">Happy Birthday!</span>
+
+  <div class="glass">
+    <p style="line-height:2;color:#e5dcef">
+      Kishan, may your dreams be bigger than your fears,
+      your happiness stronger than your worries,
+      and your future brighter than ever.
+
+      <br><br>
+      Here's to more adventures, more laughter,
+      more achievements and memories worth keeping.
+
+      <br><br>
+      <span class="gold">You deserve a beautiful year ahead. ❤️</span>
+    </p>
+  </div>
+
+  <div class="actions">
+    <button class="btn" onclick="burst()">CELEBRATE AGAIN 🎊</button>
+    <button class="btn secondary" onclick="goHome()">REPLAY WEBSITE ↻</button>
+  </div>
+  <footer>HAPPY BIRTHDAY KISHAN • MADE JUST FOR YOU</footer>
+</section>
+
+<div id="progress"></div>
+
+<script>
+const pages = [...document.querySelectorAll('.page')];
+const song = document.getElementById('song');
+const musicControl = document.getElementById('musicControl');
+let current = 0;
+
+function showPage(index) {
+  pages[current].classList.remove('active');
+  current = index;
+  pages[current].classList.add('active');
+
+  document.getElementById('counter').textContent =
+    String(current + 1).padStart(2, '0') + ' / 06';
+
+  document.getElementById('progress').style.width =
+    ((current + 1) / pages.length * 100) + '%';
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function nextPage() {
+  if (current < pages.length - 1) showPage(current + 1);
+  else goHome();
+}
+
+function goHome() {
+  showPage(0);
+}
+
+function burst() {
+  const symbols = ['🎉', '✨', '💛', '🎊', '⭐'];
+
+  for (let i = 0; i < 45; i++) {
+    const el = document.createElement('span');
+    el.className = 'confetti';
+    el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.fontSize = (12 + Math.random() * 18) + 'px';
+    el.style.animationDuration = (2 + Math.random() * 3) + 's';
+
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 5500);
+  }
+}
+
+function gift(n) {
+  const gifts = [
+    ['🎁', 'The Gift', 'A lifetime of happiness, unforgettable memories and unlimited reasons to smile!'],
+    ['💎', 'The Wish', 'May every dream you work for become a beautiful reality. Keep believing in yourself!'],
+    ['👑', 'The Title', 'OFFICIALLY THE BIRTHDAY LEGEND OF THE YEAR. No competition. Just Kishan! 🏆']
+  ];
+
+  const g = gifts[n];
+  const result = document.getElementById('giftResult');
+
+  result.innerHTML =
+    '<div style="font-size:40px;margin-bottom:10px">' + g[0] +
+    '</div><h2 class="gold">' + g[1] +
+    '</h2><p style="line-height:1.8;color:#e5dcef">' + g[2] + '</p>';
+
+  result.classList.remove('show');
+  void result.offsetWidth;
+  result.classList.add('show');
+  burst();
+}
+
+async function toggleMusic() {
+  if (song.paused) {
+    try {
+      await song.play();
+      musicControl.textContent = '⏸ PAUSE MUSIC';
+    } catch (error) {
+      musicControl.textContent = '⚠ ADD MP3 FILE';
+      alert('Please upload birthday-song.mp3 in the same folder as index.html.');
+    }
+  } else {
+    song.pause();
+    musicControl.textContent = '🎵 PLAY MUSIC';
+  }
+}
+
+document.getElementById('photoInput').addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  if (!file.type.startsWith('image/')) {
+    alert('Please choose an image file.');
+    return;
+  }
+
+  const img = document.createElement('img');
+  img.alt = 'Birthday memory';
+  img.src = URL.createObjectURL(file);
+
+  document.getElementById('photoBox').replaceChildren(img);
+});
+
+const stars = document.getElementById('stars');
+
+for (let i = 0; i < 65; i++) {
+  const star = document.createElement('span');
+  star.className = 'star';
+  star.textContent = '✦';
+  star.style.left = Math.random() * 100 + '%';
+  star.style.top = Math.random() * 100 + '%';
+  star.style.fontSize = (5 + Math.random() * 10) + 'px';
+  star.style.animationDelay = Math.random() * 4 + 's';
+  stars.appendChild(star);
+}
+
+burst();
+</script>
+
+</body>
+</html>
